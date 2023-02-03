@@ -1,0 +1,42 @@
+<body>
+  <header class="d-flex">
+    <section
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <div [class]="bgDark" class="pt-4 padding-right-3 pb-4 text-center">
+        <h1
+          [ngStyle]="{ color: defaultColor }"
+          (mouseenter)="defaultColor = hoverColor"
+          (mouseleave)="defaultColor = originalColor"
+        >
+          {{ [fullName.toUpperCase()] }}
+        </h1>
+        <p class="text-white" [style.color]="textWhite" [innerText]="major"></p>
+      </div>
+    </section>
+    <section [class]="pushLeft" class=" p-4">
+      <figure class="d-flex align-items-center">
+        <img src="../assets/phone-icon.png" alt="an phone icon" />
+        <figcaption
+          [ngStyle]="{ 'font-size': defaultSize +'rem' }"
+          (mouseenter)="defaultSize = hoverSize"
+          (mouseleave)="defaultSize = originalSize"
+        >
+          +123-456-7890
+        </figcaption>
+      </figure>
+      <figure class="d-flex align-items-center">
+        <img src="../assets/email-icon.png" alt="an email icon" />
+        <figcaption>{{ email }}</figcaption>
+      </figure>
+      <figure class="d-flex align-items-center">
+        <img src="../assets/location-icon.png" alt="an email icon" />
+        <figcaption [style.color]="textBlack" [innerText]="address"></figcaption>
+      </figure>
+    </section>
+  </header>
+</body>
+<app-about></app-about>
+<app-achievements></app-achievements>
+<app-education></app-education>
+<app-skill-and-references></app-skill-and-references>
